@@ -1,0 +1,50 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif; /* Better fallback + modern feel */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6; /* Improves readability */
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem; /* More breathing room */
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto; /* Consistent spacing */
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Subtle depth – very common */
+}
+
+img {
+    display: block;
+    max-width: 100%; /* Makes images responsive! Important for mobile */
+    height: auto;
+    margin: 1rem auto;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Softer look */
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #007bff;
+    color: white;
+    margin-top: 2rem;
+}
+
+/* Add responsiveness for small screens */
+@media (max-width: 600px) {
+    main {
+        margin: 1rem;
+        padding: 1.5rem;
+        border-radius: 0; /* Full width on mobile */
+    }
+}
