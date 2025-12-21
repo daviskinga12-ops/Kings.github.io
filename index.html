@@ -1,17 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Your Name - Portfolio</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f4; color: #333; line-height: 1.6; }
-    h1 { color: #2c3e50; }
-    a { color: #e74c3c; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinga Karim | Web Developer</title>
+    <meta name="description" content="Personal portfolio of Kinga Karim - Web Developer and Learner based in Kenya.">
+    <style>
+        body { 
+            font-family: system-ui, sans-serif; 
+            line-height: 1.6; 
+            margin: 0; 
+            background: #f8f9fa; 
+            color: #333; 
+        }
+        header, footer { 
+            background: #1a1a1a; 
+            color: white; 
+            text-align: center; 
+            padding: 3rem 1rem; 
+        }
+        nav a { 
+            color: #a0d8ff; 
+            margin: 0 1.5rem; 
+            text-decoration: none; 
+            font-weight: 500; 
+        }
+        nav a:hover { text-decoration: underline; }
+        main { 
+            max-width: 900px; 
+            margin: 2rem auto; 
+            padding: 0 1rem; 
+        }
+        h1, h2, h3 { color: #0066ff; }
+        img.profile { 
+            width: 160px; 
+            height: 160px; 
+            border-radius: 50%; 
+            border: 5px solid #0066ff; 
+            margin: 1rem 0; 
+        }
+        .skills ul { 
+            list-style: none; 
+            padding: 0; 
+        }
+        .skills li { 
+            display: inline-block; 
+            background: #0066ff; 
+            color: white; 
+            padding: 0.5rem 1rem; 
+            border-radius: 30px; 
+            margin: 0.5rem; 
+        }
+        .projects ul { 
+            list-style: none; 
+            padding: 0; 
+        }
+        .projects li { 
+            margin-bottom: 1.5rem; 
+        }
+    </style>
 </head>
 <body>
-  <h1>Hi, I'm Your Name 👋</h1>
-  <p>I'm a [student / developer / designer] building cool things.</p>
-  <p>Email: you@gmail.com | Twitter: @yourhandle</p>
+    <!-- Page-level header: Site branding, title, and primary navigation -->
+    <header>
+        <h1>Kinga Karim</h1>
+        <p>Aspiring Web Developer & Tech Enthusiast</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main content area: Contains all primary page content (used only once per page) -->
+    <main>
+        <!-- Thematic grouping: Introduction and about section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <img src="https://via.placeholder.com/160" alt="Kinga Karim profile picture" class="profile">
+            <p>Hello! I'm Kinga Karim, a passionate and self-taught web developer based in Kenya. I'm currently focused on mastering modern front-end technologies like HTML5, CSS3, and JavaScript.</p>
+            <p>I love creating clean, semantic, and responsive websites. Learning new tools and building real projects excites me the most. This site is my personal space to showcase my journey and connect with others in tech.</p>
+        </section>
+
+        <!-- Thematic grouping: Skills and technologies -->
+        <section id="skills">
+            <h2>Skills & Technologies</h2>
+            <div class="skills">
+                <ul>
+                    <li>HTML5 (Semantic)</li>
+                    <li>CSS3 (Flexbox & Grid)</li>
+                    <li>JavaScript (Basics)</li>
+                    <li>Responsive Design</li>
+                    <li>Git & GitHub</li>
+                    <li>Learning React</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Thematic grouping: Projects showcase -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects">
+                <ul>
+                    <li>
+                        <h3>Personal Portfolio</h3>
+                        <p>This website – built with pure semantic HTML and CSS. Fully responsive and hosted on GitHub Pages.</p>
+                    </li>
+                    <li>
+                        <h3>Landing Page Clone</h3>
+                        <p>A responsive clone of a modern landing page to practice CSS Grid and Flexbox.</p>
+                    </li>
+                    <li>
+                        <h3>To-Do List App</h3>
+                        <p>A simple interactive to-do app built with vanilla JavaScript (in progress).</p>
+                    </li>
+                    <li>
+                        <h3>More coming soon...</h3>
+                        <p>I'm always working on new ideas!</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Thematic grouping: Contact information -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out for collaborations, questions, or just to say hi!</p>
+            <p>
+                Email: <a href="mailto:daviskinga12@gmail.com">daviskinga12@gmail.com</a><br>
+                Phone: +254 743717368<br>
+                Location: Kenya
+            </p>
+        </section>
+    </main>
+
+    <!-- Page-level footer: Site-wide closing information and copyright -->
+    <footer>
+        <p>&copy; 2025 Kinga Karim. Built with love and semantic HTML.</p>
+    </footer>
 </body>
 </html>
