@@ -1,143 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kinga davis | Web Developer</title>
-    <meta name="description" content="Personal portfolio of Kinga Karim - Web Developer and Learner based in Kenya.">
-    <style>
-        body { 
-            font-family: system-ui, sans-serif; 
-            line-height: 1.6; 
-            margin: 0; 
-            background: #f8f9fa; 
-            color: #333; 
-        }
-        header, footer { 
-            background: #1a1a1a; 
-            color: white; 
-            text-align: center; 
-            padding: 3rem 1rem; 
-        }
-        nav a { 
-            color: #a0d8ff; 
-            margin: 0 1.5rem; 
-            text-decoration: none; 
-            font-weight: 500; 
-        }
-        nav a:hover { text-decoration: underline; }
-        main { 
-            max-width: 900px; 
-            margin: 2rem auto; 
-            padding: 0 1rem; 
-        }
-        h1, h2, h3 { color: #0066ff; }
-        img.profile { 
-            width: 160px; 
-            height: 160px; 
-            border-radius: 50%; 
-            border: 5px solid #0066ff; 
-            margin: 1rem 0; 
-        }
-        .skills ul { 
-            list-style: none; 
-            padding: 0; 
-        }
-        .skills li { 
-            display: inline-block; 
-            background: #0066ff; 
-            color: white; 
-            padding: 0.5rem 1rem; 
-            border-radius: 30px; 
-            margin: 0.5rem; 
-        }
-        .projects ul { 
-            list-style: none; 
-            padding: 0; 
-        }
-        .projects li { 
-            margin-bottom: 1.5rem; 
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Davis Kinga — Full-stack developer, fintech builder, and AI practitioner based in Nairobi, Kenya.">
+<title>Davis Kinga | Full-Stack Developer & Fintech Builder</title>
+<style>
+  :root {
+    --navy: #1C2B4A;
+    --teal: #0B6E6E;
+    --green: #1A7A4A;
+    --light: #F8FAFC;
+    --border: #E2E8F0;
+    --text: #0F172A;
+    --muted: #64748B;
+    --white: #FFFFFF;
+    --accent: #059669;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--white); color: var(--text); line-height: 1.6; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 100; padding: 0 5%; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .nav-logo { font-weight: 700; font-size: 1.1rem; color: var(--navy); text-decoration: none; }
+  .nav-logo span { color: var(--green); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.9rem; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--navy); }
+  .nav-cta { background: var(--green); color: white !important; padding: 6px 18px; border-radius: 6px; font-weight: 500; }
+  .nav-cta:hover { background: var(--teal) !important; color: white !important; }
+
+  /* HERO */
+  .hero { min-height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%); padding: 80px 5% 60px; }
+  .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .hero-badge { display: inline-block; background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); font-size: 0.8rem; padding: 4px 14px; border-radius: 20px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.2); }
+  .hero h1 { font-size: 3rem; font-weight: 800; color: white; line-height: 1.15; margin-bottom: 1.2rem; }
+  .hero h1 span { color: #6EE7B7; }
+  .hero p { font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 2rem; line-height: 1.7; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { background: var(--green); color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: transform 0.2s, background 0.2s; }
+  .btn-primary:hover { background: #156b3d; transform: translateY(-1px); }
+  .btn-outline { background: transparent; color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; border: 2px solid rgba(255,255,255,0.4); transition: border-color 0.2s, background 0.2s; }
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+  .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .stat-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; padding: 1.5rem; text-align: center; }
+  .stat-card .num { font-size: 2.2rem; font-weight: 800; color: #6EE7B7; line-height: 1; }
+  .stat-card .label { font-size: 0.8rem; color: rgba(255,255,255,0.7); margin-top: 4px; }
+
+  /* SECTIONS */
+  section { padding: 80px 5%; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; color: var(--green); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; }
+  .section-title { font-size: 2rem; font-weight: 800; color: var(--navy); margin-bottom: 0.75rem; }
+  .section-sub { font-size: 1rem; color: var(--muted); max-width: 600px; margin-bottom: 3rem; }
+
+  /* PROJECTS */
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+  .project-card { border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; transition: border-color 0.2s, transform 0.2s; background: white; }
+  .project-card:hover { border-color: var(--teal); transform: translateY(-3px); }
+  .project-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1rem; }
+  .project-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+  .project-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1rem; }
+  .tag { font-size: 0.75rem; background: var(--light); color: var(--navy); padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+  .project-link { font-size: 0.85rem; color: var(--green); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
+  .project-link:hover { color: var(--teal); }
+  .featured { border-color: var(--green); background: linear-gradient(135deg, #f0fdf4 0%, white 100%); }
+
+  /* SKILLS */
+  .skills-bg { background: var(--light); }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .skill-group { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; }
+  .skill-group h3 { font-size: 0.9rem; font-weight: 700; color: var(--navy); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
+  .skill-group h3 span { background: var(--green); color: white; width: 28px; height: 28px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.8rem; }
+  .skill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skill-pill { font-size: 0.8rem; padding: 4px 12px; border-radius: 20px; font-weight: 500; }
+  .s-blue { background: #EFF6FF; color: #1E40AF; }
+  .s-green { background: #F0FDF4; color: #166534; }
+  .s-purple { background: #F5F3FF; color: #5B21B6; }
+  .s-orange { background: #FFF7ED; color: #9A3412; }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .about-text h2 { font-size: 2rem; font-weight: 800; color: var(--navy); margin-bottom: 1rem; }
+  .about-text p { color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+  .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+  .highlight { background: var(--light); border-radius: 10px; padding: 1rem; }
+  .highlight .icon { font-size: 1.4rem; margin-bottom: 0.4rem; }
+  .highlight h4 { font-size: 0.85rem; font-weight: 700; color: var(--navy); }
+  .highlight p { font-size: 0.8rem; color: var(--muted); margin: 0; }
+  .about-visual { background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%); border-radius: 20px; padding: 2.5rem; color: white; }
+  .about-visual h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: #6EE7B7; }
+  .timeline-item { display: flex; gap: 1rem; margin-bottom: 1.2rem; }
+  .timeline-dot { width: 10px; height: 10px; border-radius: 50%; background: #6EE7B7; flex-shrink: 0; margin-top: 6px; }
+  .timeline-item h4 { font-size: 0.9rem; font-weight: 600; color: white; }
+  .timeline-item p { font-size: 0.8rem; color: rgba(255,255,255,0.65); margin: 0; }
+
+  /* CONTACT */
+  .contact-bg { background: var(--navy); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .contact-text h2 { font-size: 2rem; font-weight: 800; color: white; margin-bottom: 1rem; }
+  .contact-text p { color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 1.5rem; }
+  .contact-items { display: flex; flex-direction: column; gap: 0.75rem; }
+  .contact-item { display: flex; align-items: center; gap: 0.75rem; color: rgba(255,255,255,0.85); font-size: 0.9rem; }
+  .contact-icon { width: 36px; height: 36px; background: rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+  .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
+  .contact-link-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 1rem 1.25rem; text-decoration: none; transition: background 0.2s; display: flex; align-items: center; justify-content: space-between; }
+  .contact-link-card:hover { background: rgba(255,255,255,0.15); }
+  .contact-link-card .link-name { font-weight: 600; color: white; font-size: 0.9rem; }
+  .contact-link-card .link-url { font-size: 0.8rem; color: #6EE7B7; }
+  .arrow { color: rgba(255,255,255,0.4); }
+
+  /* FOOTER */
+  footer { background: #0F1A2E; padding: 1.5rem 5%; text-align: center; }
+  footer p { color: rgba(255,255,255,0.4); font-size: 0.85rem; }
+  footer a { color: #6EE7B7; text-decoration: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero-inner, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .hero h1 { font-size: 2rem; }
+    .hero-stats { grid-template-columns: repeat(3, 1fr); }
+    .stat-card .num { font-size: 1.6rem; }
+    .nav-links { display: none; }
+    .about-highlights { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
-    <!-- Page-level header: Site branding, title, and primary navigation -->
-    <header>
-        <h1>Kinga davis</h1>
-        <p>Aspiring Web Developer & Tech Enthusiast</p>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
 
-    <!-- Main content area: Contains all primary page content (used only once per page) -->
-    <main>
-        <!-- Thematic grouping: Introduction and about section -->
-        <section id="about">
-            <h2>About Me</h2>
-            <img src="https://via.placeholder.com/160" alt="Kinga davis profile picture" class="profile">
-            <p>Hello! I'm Kinga davis, a passionate and self-taught web developer based in Kenya. I'm currently focused on mastering modern front-end technologies like HTML5, CSS3, and JavaScript.</p>
-            <p>I love creating clean, semantic, and responsive websites. Learning new tools and building real projects excites me the most. This site is my personal space to showcase my journey and connect with others in tech.</p>
-        </section>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Davis<span>Kinga</span></a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-        <!-- Thematic grouping: Skills and technologies -->
-        <section id="skills">
-            <h2>Skills & Technologies</h2>
-            <div class="skills">
-                <ul>
-                    <li>HTML5 (Semantic)</li>
-                    <li>CSS3 (Flexbox & Grid)</li>
-                    <li>JavaScript (Basics)</li>
-                    <li>Responsive Design</li>
-                    <li>Git & GitHub</li>
-                    <li>Learning React</li>
-                </ul>
-            </div>
-        </section>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">🇰🇪 Nairobi, Kenya · Available for Remote Work</div>
+      <h1>Full-Stack Developer &amp;<br><span>Fintech Builder</span></h1>
+      <p>I build production-grade web applications, fintech payment systems, and AI-powered tools — solo, from idea to deployment. 4 live products. Real users. Real transactions.</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">View My Projects</a>
+        <a href="https://github.com/daviskinga12-ops" target="_blank" class="btn-outline">GitHub Profile</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="num">4</div>
+        <div class="label">Live Products</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">32</div>
+        <div class="label">Financial Tools</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">16</div>
+        <div class="label">GitHub Repos</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">M-Pesa</div>
+        <div class="label">Payment APIs</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">AI</div>
+        <div class="label">Practitioner</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">UTC+3</div>
+        <div class="label">Timezone</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- Thematic grouping: Projects showcase -->
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="projects">
-                <ul>
-                    <li>
-                        <h3>Personal Portfolio</h3>
-                        <p>This website – built with pure semantic HTML and CSS. Fully responsive and hosted on GitHub Pages.</p>
-                    </li>
-                    <li>
-                        <h3>Landing Page Clone</h3>
-                        <p>A responsive clone of a modern landing page to practice CSS Grid and Flexbox.</p>
-                    </li>
-                    <li>
-                        <h3>To-Do List App</h3>
-                        <p>A simple interactive to-do app built with vanilla JavaScript (in progress).</p>
-                    </li>
-                    <li>
-                        <h3>More coming soon...</h3>
-                        <p>I'm always working on new ideas!</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <span class="section-tag">Portfolio</span>
+    <h2 class="section-title">Things I've Built &amp; Shipped</h2>
+    <p class="section-sub">Every project here is live, production-deployed, and built solo without external funding.</p>
+    <div class="projects-grid">
 
-        <!-- Thematic grouping: Contact information -->
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out for collaborations, questions, or just to say hi!</p>
-            <p>
-                Email: <a href="mailto:daviskinga12@gmail.com">daviskinga12@gmail.com</a><br>
-                Phone: +254 743717368<br>
-                Location: Kenya
-            </p>
-        </section>
-    </main>
+      <div class="project-card featured">
+        <div class="project-icon" style="background:#DCFCE7">💰</div>
+        <h3>PesaCheck</h3>
+        <p>The most comprehensive free personal finance platform — 32 tools covering loans, investments, savings, budgeting, and tax. Built from first principles. Under 100ms load time.</p>
+        <div class="project-tags">
+          <span class="tag">JavaScript</span><span class="tag">HTML/CSS</span><span class="tag">M-Pesa API</span><span class="tag">Vercel</span>
+        </div>
+        <a href="https://pesacheck.vercel.app" target="_blank" class="project-link">Live Demo →</a>
+      </div>
 
-    <!-- Page-level footer: Site-wide closing information and copyright -->
-    <footer>
-        <p>&copy; 2025 Kinga davis. Built with love and semantic HTML.</p>
-    </footer>
+      <div class="project-card">
+        <div class="project-icon" style="background:#FEF3C7">⚡</div>
+        <h3>PesaCheck Backend</h3>
+        <p>Production Node.js/Express payment backend with full M-Pesa Daraja API integration — STK Push, OAuth, callbacks, and subscription management. Deployed on Railway.</p>
+        <div class="project-tags">
+          <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">M-Pesa</span><span class="tag">Railway</span>
+        </div>
+        <a href="https://github.com/daviskinga12-ops/pesacheck-backend" target="_blank" class="project-link">GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon" style="background:#EDE9FE">🔐</div>
+        <h3>Veribase</h3>
+        <p>Trust and verification infrastructure for Africa's informal economy. Full SaaS with TypeScript, Supabase, M-Pesa STK Push, investor pitch deck, and financial model.</p>
+        <div class="project-tags">
+          <span class="tag">TypeScript</span><span class="tag">Supabase</span><span class="tag">M-Pesa</span><span class="tag">SaaS</span>
+        </div>
+        <a href="https://github.com/daviskinga12-ops/veribase-app" target="_blank" class="project-link">GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon" style="background:#F0F9FF">🖤</div>
+        <h3>Onyx Digital</h3>
+        <p>AI-powered social media growth agency platform. AI caption generation, content scheduling automation, and paid ad management for businesses — without creating new videos.</p>
+        <div class="project-tags">
+          <span class="tag">HTML/CSS/JS</span><span class="tag">AI</span><span class="tag">Automation</span>
+        </div>
+        <a href="https://github.com/daviskinga12-ops/Onyx-digital" target="_blank" class="project-link">GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon" style="background:#FFF1F2">🧮</div>
+        <h3>Pesa Tools</h3>
+        <p>Standalone, offline-capable financial calculators. Single HTML files that work without internet — built for markets where connectivity is unreliable.</p>
+        <div class="project-tags">
+          <span class="tag">JavaScript</span><span class="tag">Offline</span><span class="tag">Mobile-first</span>
+        </div>
+        <a href="https://github.com/daviskinga12-ops/pesa-tools" target="_blank" class="project-link">GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon" style="background:#ECFDF5">🎬</div>
+        <h3>WealthWise</h3>
+        <p>Personal finance YouTube channel and content platform. AI video production pipeline, Amazon Associates monetisation, digital product sales on Selar.</p>
+        <div class="project-tags">
+          <span class="tag">Content</span><span class="tag">AI Video</span><span class="tag">YouTube</span><span class="tag">Vercel</span>
+        </div>
+        <a href="https://youtube.com/@WealthWise" target="_blank" class="project-link">YouTube →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="skills-bg">
+  <div class="section-inner">
+    <span class="section-tag">Tech Stack</span>
+    <h2 class="section-title">Skills &amp; Technologies</h2>
+    <p class="section-sub">Everything I use to design, build, ship, and iterate.</p>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3><span>🌐</span> Frontend</h3>
+        <div class="skill-list">
+          <span class="skill-pill s-blue">HTML5</span>
+          <span class="skill-pill s-blue">CSS3</span>
+          <span class="skill-pill s-blue">JavaScript ES6+</span>
+          <span class="skill-pill s-blue">TypeScript</span>
+          <span class="skill-pill s-blue">Responsive Design</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3><span>⚙️</span> Backend & APIs</h3>
+        <div class="skill-list">
+          <span class="skill-pill s-green">Node.js</span>
+          <span class="skill-pill s-green">Express.js</span>
+          <span class="skill-pill s-green">REST API Design</span>
+          <span class="skill-pill s-green">M-Pesa Daraja API</span>
+          <span class="skill-pill s-green">Supabase</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3><span>☁️</span> Deployment</h3>
+        <div class="skill-list">
+          <span class="skill-pill s-purple">Vercel</span>
+          <span class="skill-pill s-purple">Railway</span>
+          <span class="skill-pill s-purple">GitHub</span>
+          <span class="skill-pill s-purple">Netlify</span>
+          <span class="skill-pill s-purple">CI/CD</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3><span>🤖</span> AI & Tools</h3>
+        <div class="skill-list">
+          <span class="skill-pill s-orange">Claude API</span>
+          <span class="skill-pill s-orange">Prompt Engineering</span>
+          <span class="skill-pill s-orange">AI Video (Tavus/D-ID)</span>
+          <span class="skill-pill s-orange">LLM Evaluation</span>
+          <span class="skill-pill s-orange">Notion</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="section-tag">About</span>
+        <h2>Building from Nairobi, shipping to the world.</h2>
+        <p>I'm Davis Kinga — a self-taught full-stack developer and fintech builder based in Nairobi, Kenya. I build production-grade web applications and financial tools that solve real problems for real people.</p>
+        <p>Alongside my Diploma in Water Engineering at Kenya Water Institute (KEWI), I've independently built and shipped 4 live products — PesaCheck, Veribase, Onyx Digital, and WealthWise — all without a team or external funding.</p>
+        <p>I specialise in JavaScript, Node.js, M-Pesa API integrations, and AI-assisted product development. Available full-time for remote work globally.</p>
+        <div class="about-highlights">
+          <div class="highlight">
+            <div class="icon">🎓</div>
+            <h4>Water Engineering</h4>
+            <p>KEWI Diploma · Nairobi</p>
+          </div>
+          <div class="highlight">
+            <div class="icon">💳</div>
+            <h4>Fintech Builder</h4>
+            <p>M-Pesa, Daraja API, payments</p>
+          </div>
+          <div class="highlight">
+            <div class="icon">🤖</div>
+            <h4>AI Practitioner</h4>
+            <p>Daily user of LLMs & AI tools</p>
+          </div>
+          <div class="highlight">
+            <div class="icon">🌍</div>
+            <h4>Remote Ready</h4>
+            <p>UTC+3 · Full-time available</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <h3>Journey So Far</h3>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div>
+            <h4>PesaCheck — 32-tool fintech platform</h4>
+            <p>Built production M-Pesa payment backend · 2025</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div>
+            <h4>Veribase — Africa's trust infrastructure</h4>
+            <p>SaaS with Supabase + M-Pesa STK · 2025</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div>
+            <h4>WealthWise — Finance content brand</h4>
+            <p>YouTube + AI video pipeline · 2025</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div>
+            <h4>Onyx Digital — AI marketing agency</h4>
+            <p>Social media automation platform · 2025</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div>
+            <h4>Diploma — Water Engineering</h4>
+            <p>Kenya Water Institute (KEWI) · 2024–Present</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-bg">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-text">
+        <span class="section-tag" style="color:#6EE7B7">Contact</span>
+        <h2>Let's build something together.</h2>
+        <p>Open to remote engineering roles, AI training contracts (Mercor, micro1, Scale AI), freelance projects, and collaboration opportunities.</p>
+        <div class="contact-items">
+          <div class="contact-item"><div class="contact-icon">📍</div> Nairobi, Kenya (UTC+3)</div>
+          <div class="contact-item"><div class="contact-icon">✉️</div> investwithwealthwise@gmail.com</div>
+          <div class="contact-item"><div class="contact-icon">⏰</div> Available full-time · Flexible hours</div>
+        </div>
+      </div>
+      <div class="contact-links">
+        <a href="https://pesacheck.vercel.app" target="_blank" class="contact-link-card">
+          <div><div class="link-name">💰 PesaCheck</div><div class="link-url">pesacheck.vercel.app</div></div>
+          <span class="arrow">→</span>
+        </a>
+        <a href="https://github.com/daviskinga12-ops" target="_blank" class="contact-link-card">
+          <div><div class="link-name">💻 GitHub</div><div class="link-url">github.com/daviskinga12-ops</div></div>
+          <span class="arrow">→</span>
+        </a>
+        <a href="https://youtube.com/@WealthWise" target="_blank" class="contact-link-card">
+          <div><div class="link-name">🎬 WealthWise YouTube</div><div class="link-url">youtube.com/@WealthWise</div></div>
+          <span class="arrow">→</span>
+        </a>
+        <a href="mailto:investwithwealthwise@gmail.com" class="contact-link-card">
+          <div><div class="link-name">✉️ Email Me</div><div class="link-url">investwithwealthwise@gmail.com</div></div>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Built by <a href="https://github.com/daviskinga12-ops">Davis Kinga</a> · Nairobi, Kenya 🇰🇪 · <a href="https://pesacheck.vercel.app">PesaCheck</a></p>
+</footer>
+
 </body>
 </html>
